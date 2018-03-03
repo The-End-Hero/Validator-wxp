@@ -1,18 +1,16 @@
-### validator-wxp
+# Validator-wxp
 
 一款小巧无依赖的表单验证库，支持独立字符串验证。
 
-#### How to use it？
+#### 怎么使用？
 
-Step1:
+步骤1:
 
-- npm install validator-wxp —save
+- 安装 npm install validator-wxp —save  或 直接script标签引入
 
-Step2:
+步骤2:
 
-- in you want to use JS file 
-
-- just for string
+- 独立字符串验证
 
   ```javascript
   // just for string
@@ -21,7 +19,7 @@ Step2:
   v.isPhone('sss') // false
   ```
 
-- for form validation
+- 表单验证
 
   ```javascript
   import Validator from 'validator-wxp'
@@ -37,8 +35,31 @@ Step2:
   function blurValidate(){
   	v.validate()
   }
-
   ```
 
   ​
+
+
+### 独立字符串验证
+
+```JavaScript
+var v = new Validator();
+v.isEmail('wowohoo@qq.com'); // -> 验证合法邮箱  |=> 返回布尔值
+v.isIp('192.168.23.3'); // -> 验证合法 ip 地址  |=> 返回布尔值
+v.isFax(''); // -> 验证传真  |=> 返回布尔值
+v.isPhone('13622667263'); // -> 验证手机  |=> 返回布尔值
+v.isTel('021－324234-234'); // -> 验证座机  |=> 返回布尔值
+v.isUrl('http://JSLite.io'); // -> 验证URL  |=> 返回布尔值
+v.maxLength('JSLite',12); // -> 最大长度  |=> 返回布尔值
+v.minLength('JSLite',3); // -> 最小长度  |=> 返回布尔值
+v.required('23'); // -> 是否为必填(是否为空)  |=> 返回布尔值
+```
+
+
+
+
+
+##### 参考(抄袭)
+
+- https://github.com/jaywcjlove/validator.js /轻量级的JavaScript表单验证，字符串验证。没有依赖，支持UMD，~3kb
 
